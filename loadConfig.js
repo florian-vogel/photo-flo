@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const swup = new Swup(); // initializes Swup
-
   fetch("config.json")
     .then((response) => response.json())
     .then((config) => {
