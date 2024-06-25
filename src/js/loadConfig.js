@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("config.json")
+  fetch("siteConfig.json")
     .then((response) => response.json())
     .then((config) => {
       // Loop through all elements with a 'data-config' attribute
