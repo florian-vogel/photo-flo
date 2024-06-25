@@ -1,10 +1,16 @@
 <?php include './head.html'; ?>
+
 <body>
   <?php include './header.html'; ?>
-  <?php include './navigation.html'; ?>
   <main id="swup" class="transition-fade">
+
     <!-- your content that will be swapped goes here -->
-    <h1>Welcome</h1>
-    <p>Lorem ipsum dolor sit amet.</p>
+    <div id="content">
+      <div class="flex-container">
+        <?php include './navigation.html'; ?>
+        <?php include './pages/photos.php' ?>
+      </div>
+    </div>
+
   </main>
 </body>

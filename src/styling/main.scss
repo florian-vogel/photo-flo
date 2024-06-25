@@ -1,0 +1,61 @@
+/* Fade transition example */
+/* Define a transition duration during page visits */
+html.is-changing .transition-fade {
+  transition: opacity 0.25s;
+  opacity: 1;
+} /* Define the styles for the unloaded pages */
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif !important;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-weight: normal;
+  color: #939393;
+  font-size: 1.2rem;
+}
+
+#masthead {
+  margin-bottom: 20px;
+
+  .flex-container {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+#content {
+  .flex-container {
+    justify-content: space-between;
+  }
+}
+
+.flex-container {
+  display: flex;
+  width: calc(100%-60px);
+  padding: 0 30px 0 30px;
+}
+
+ul.nav-list {
+  list-style: none;
+  padding-left: 0;
+  width: 250px;
+
+  a:link,
+  a:visited {
+    color: black; /* Set your preferred color */
+    text-decoration: none; /* Optional: removes underline from links */
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
