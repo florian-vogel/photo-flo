@@ -19,18 +19,18 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Failed to load configuration:", error));
 });
 
-document.querySelectorAll('.toggle-submenu').forEach(item => {
-    item.addEventListener('click', function() {
-        const submenu = this.nextElementSibling;
-        if (submenu.classList.contains('active-submenu')) {
-            submenu.classList.add('closing');
-            setTimeout(() => {
-                submenu.classList.remove('active-submenu', 'closing');
-                submenu.style.maxHeight = '0';
-            }, 500); // Match the longest animation delay and duration
-        } else {
-            submenu.classList.add('active-submenu');
-            submenu.style.maxHeight = '100px'; // Or the max height needed
-        }
-    });
+document.querySelectorAll(".toggle-submenu").forEach((item) => {
+  item.addEventListener("click", function () {
+    const submenu = this.nextElementSibling;
+    if (submenu.classList.contains("active-submenu")) {
+      submenu.classList.add("closing");
+      submenu.style.maxHeight = "0";
+      setTimeout(() => {
+        submenu.classList.remove("active-submenu", "closing");
+      }, 1000); // Match the longest animation delay and duration
+    } else {
+      submenu.classList.add("active-submenu");
+      submenu.style.maxHeight = "75px"; // Or the max height needed
+    }
+  });
 });
