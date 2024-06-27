@@ -25,6 +25,7 @@ h2 {
 
 h3 {
   font-size: 1.2rem;
+  font-weight: normal;
 }
 
 #masthead {
@@ -44,8 +45,8 @@ h3 {
 
 .flex-container {
   display: flex;
-  width: calc(100%-120px);
-  padding: 0 60px 0 60px;
+  width: calc(100%-40px);
+  padding: 0 20px 0 20px;
 }
 
 ul.nav-list {
@@ -55,12 +56,27 @@ ul.nav-list {
 
   a:link,
   a:visited {
-    color: black;
+    //color: black;
+    color: #939393;
     text-decoration: none;
   }
 
+  a:hover {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    a {
+      color: black !important;
+    }
+  }
+
+  a {
+    transition: color 0.5s ease-in-out;
+  }
+
   li {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
   }
 
   .submenu {
@@ -76,6 +92,7 @@ ul.nav-list {
     li {
       margin-bottom: 10px !important;
       transition: opacity 0.2s ease-in-out;
+      display: none;
     }
   }
 
@@ -91,7 +108,7 @@ ul.nav-list {
   .submenu.closing,
   .submenu.opening {
     li a {
-      color: #939393 !important;
+      color: #939393;
     }
   }
 

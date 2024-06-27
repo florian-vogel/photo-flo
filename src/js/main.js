@@ -20,13 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.querySelectorAll(".toggle-submenu").forEach((item) => {
-  item.addEventListener("click", function() {
+  item.addEventListener("click", function () {
     let parentElement = this.parentElement;
     let submenu = parentElement.querySelector(".submenu");
     let submenuItems = submenu.querySelectorAll("li");
     let animationDelaySubmenuItems = 200;
 
-    if (submenu.classList.contains("opening") || submenu.classList.contains("closing")) {
+    if (
+      submenu.classList.contains("opening") ||
+      submenu.classList.contains("closing")
+    ) {
       return;
     }
 
@@ -38,7 +41,10 @@ document.querySelectorAll(".toggle-submenu").forEach((item) => {
       submenuItems.forEach((item, index) => {
         setTimeout(() => {
           item.style.opacity = 0; // Trigger CSS transition
-        }, animationDelaySubmenuItems * (submenuItems.length - index));
+          setTimeout(() => {
+            item.style.display = "none";
+          }, 500);
+        }, animationDelaySubmenuItems * (submenuItems.length - index - 1));
       });
 
       setTimeout(() => {
@@ -50,6 +56,7 @@ document.querySelectorAll(".toggle-submenu").forEach((item) => {
       submenu.style.maxHeight = `${submenuHeight}px`;
 
       submenuItems.forEach((item, index) => {
+        item.style.display = "block";
         setTimeout(() => {
           item.style.opacity = 1; // Trigger CSS transition
         }, animationDelaySubmenuItems * (index + 1));
