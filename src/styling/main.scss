@@ -46,7 +46,7 @@ h3 {
 
 #content {
   .flex-container {
-    justify-content: space-between;
+    //justify-content: end;
   }
 }
 
@@ -61,6 +61,12 @@ ul.nav-list {
   padding-left: 0;
   width: 250px;
   margin: 0;
+
+  &.flex-container {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
 
   a:link,
   a:visited {
@@ -84,7 +90,7 @@ ul.nav-list {
   }
 
   li {
-    margin-bottom: 30px;
+    margin-bottom: 0;
 
     &.active {
       a {

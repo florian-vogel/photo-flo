@@ -1,16 +1,15 @@
 .photos-container {
-  //width: 100%;
+  width: 100%;
   height: 100%;
   //padding-top: 5rem;
 
   &.flex-container {
-    flex-direction: column;
+    flex-direction: row;
     align-items: end;
     padding-right: 0;
   }
 
   img {
-    width: 100%;
     height: 100%;
     max-height: 96vh;
   }
@@ -24,9 +23,12 @@
 
   .photo-container {
     margin-bottom: 3rem;
+    width: 100%;
 
     &.flex-container {
-      flex-direction: column;
+      flex-direction: row;
+      align-items: end;
+      justify-content: end;
       //align-items: center;
       padding: 0;
       //padding-bottom: 3rem;
@@ -35,8 +37,10 @@
 
     .subtitle {
       margin-top: 1rem;
+      margin-right: 2vh;
       //font-size: 0.85rem;
       text-align: center;
+      color: #939393;
     }
   }
 }
