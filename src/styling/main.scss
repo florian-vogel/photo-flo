@@ -11,21 +11,26 @@ html.is-animating .transition-fade {
 body {
   font-family: "Inter", "Arial", sans-serif !important;
   margin: 0;
+  font-size: 10px !important;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
 }
 
 h1 {
   font-weight: normal;
-  font-size: 1rem;
+  //font-size: 1rem;
 }
 
 h2 {
   font-weight: normal;
   color: #939393;
-  font-size: 1rem;
+  //font-size: 1rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+  //font-size: 1.2rem;
   font-weight: normal;
 }
 
@@ -47,14 +52,15 @@ h3 {
 
 .flex-container {
   display: flex;
-  width: calc(100%-40px);
-  padding: 0 20px 0 20px;
+  // width: 100%;
+  padding: 0;
 }
 
 ul.nav-list {
   list-style: none;
   padding-left: 0;
   width: 250px;
+  margin: 0;
 
   a:link,
   a:visited {
@@ -79,6 +85,12 @@ ul.nav-list {
 
   li {
     margin-bottom: 30px;
+
+    &.active {
+      a {
+        color: black;
+      }
+    }
   }
 
   .submenu {

@@ -52,7 +52,7 @@ document.querySelectorAll(".toggle-submenu").forEach((item) => {
       }, (submenuItems.length + 1) * animationDelaySubmenuItems);
     } else {
       submenu.classList.add("opening");
-      let submenuHeight = submenuItems.length * 25; // Example height per item
+      let submenuHeight = submenuItems.length * 15; // Example height per item
       submenu.style.maxHeight = `${submenuHeight}px`;
 
       submenuItems.forEach((item, index) => {
