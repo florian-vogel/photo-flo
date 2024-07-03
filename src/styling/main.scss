@@ -68,11 +68,20 @@ ul.nav-list {
     height: 100%;
   }
 
-  a:link,
-  a:visited {
-    //color: black;
-    color: #939393;
-    text-decoration: none;
+  li {
+    a:link,
+    a:visited {
+      color: black;
+      //color: #939393;
+      text-decoration: none;
+      //opacity: 0;
+    }
+  }
+
+  &>li:not(.active) {
+    a {
+      opacity: 0;
+    }
   }
 
   a:hover {
@@ -82,11 +91,12 @@ ul.nav-list {
   &:hover {
     a {
       color: black !important;
+      opacity: 1 !important;
     }
   }
 
   a {
-    transition: color 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
   }
 
   li {
