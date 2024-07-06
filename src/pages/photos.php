@@ -2,7 +2,7 @@
     <!--     <h3>Spring in Sicily</h3> -->
     <div class="photo-container flex-container">
         <div class="subtitle">San Vito Lo Capo</div>
-        <img src="./assets/berlin_at_night/CIMG0825.JPG" alt="Description of the image">
+        <img src="./assets/berlin_at_night/IMG_4697.JPG" alt="Description of the image">
     </div>
     <!--     <div class="photo-container flex-container">
         <img src="./assets/berlin_at_night/CIMG0721.JPG" alt="Description of the image">

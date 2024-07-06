@@ -1,3 +1,6 @@
+var menuItems = document.querySelectorAll(".menu-item");
+var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false));
+
 document.addEventListener("DOMContentLoaded", function () {
   const swup = new Swup(); // initializes Swup
 
@@ -19,8 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Failed to load configuration:", error));
 });
 
-document.querySelectorAll(".toggle-submenu").forEach((item) => {
-  item.addEventListener("click", function () {
+document.querySelectorAll(".toggle-submenu").forEach((item, index) => {
+  item.addEventListener("mouseover", function () {
+    menuOpen[index] = true;
+
     let parentElement = this.parentElement;
     let submenu = parentElement.querySelector(".submenu");
     let submenuItems = submenu.querySelectorAll("li");
@@ -33,6 +38,57 @@ document.querySelectorAll(".toggle-submenu").forEach((item) => {
       return;
     }
 
+    if (!submenu.classList.contains("active-submenu")) {
+      submenu.classList.add("opening");
+      let submenuHeight = submenuItems.length * 15; // Example height per item
+      submenu.style.maxHeight = `${submenuHeight}px`;
+
+      submenuItems.forEach((item, index) => {
+        item.style.display = "block";
+        setTimeout(() => {
+          item.style.opacity = 1; // Trigger CSS transition
+        }, animationDelaySubmenuItems * (index + 1));
+      });
+
+      setTimeout(() => {
+        submenu.classList.remove("opening");
+        submenu.classList.add("active-submenu");
+        applyMenuState();
+      }, submenuItems.length * animationDelaySubmenuItems);
+    }
+  });
+});
+
+document.querySelectorAll(".menu-item").forEach((item, index) => {
+  item.addEventListener("mouseleave", function () {
+    menuOpen[index] = false;
+    applyMenuState();
+  });
+});
+
+var menuItems = document.querySelectorAll(".menu-item");
+
+function applyMenuState() {
+  //applyOpenedItems();
+  applyClosedItems();
+}
+
+function applyClosedItems() {
+  menuItems.forEach((item, index) => {
+    if(menuOpen[index]){
+      return;
+    }
+    let parentElement = item.parentElement;
+    let submenu = item.querySelector(".submenu");
+    let submenuItems = submenu.querySelectorAll("li");
+    let animationDelaySubmenuItems = 200;
+
+    /*     if (
+      submenu.classList.contains("opening") ||
+      submenu.classList.contains("closing")
+    ) {
+      return;
+    } */
     if (submenu.classList.contains("active-submenu")) {
       submenu.classList.remove("active-submenu");
       submenu.classList.add("closing");
@@ -50,22 +106,6 @@ document.querySelectorAll(".toggle-submenu").forEach((item) => {
       setTimeout(() => {
         submenu.classList.remove("closing");
       }, (submenuItems.length + 1) * animationDelaySubmenuItems);
-    } else {
-      submenu.classList.add("opening");
-      let submenuHeight = submenuItems.length * 15; // Example height per item
-      submenu.style.maxHeight = `${submenuHeight}px`;
-
-      submenuItems.forEach((item, index) => {
-        item.style.display = "block";
-        setTimeout(() => {
-          item.style.opacity = 1; // Trigger CSS transition
-        }, animationDelaySubmenuItems * (index + 1));
-      });
-
-      setTimeout(() => {
-        submenu.classList.remove("opening");
-        submenu.classList.add("active-submenu");
-      }, submenuItems.length * animationDelaySubmenuItems);
     }
   });
-});
+}
