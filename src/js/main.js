@@ -72,7 +72,7 @@ function applyOpenedItems() {
         item.style.display = "block";
         setTimeout(() => {
           item.style.opacity = 1; // Trigger CSS transition
-        }, animationDelaySubmenuItems * (index + 1));
+        }, animationDelaySubmenuItems * (index));
       });
 
       setTimeout(() => {
@@ -113,7 +113,7 @@ function applyClosedItems() {
           item.style.opacity = 0; // Trigger CSS transition
           setTimeout(() => {
             item.style.display = "none";
-          }, 500);
+          }, 300);
         }, animationDelaySubmenuItems * (submenuItems.length - index - 1));
       });
 
