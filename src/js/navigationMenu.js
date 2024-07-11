@@ -3,7 +3,16 @@ const config = {
   categories: [
     {
       name: "liva voigt",
-      images: ["./assets/photo/barcelona/bspbildhorizontal.jpg", "./assets/exhibitions/blendung/img_4697.jpg"],
+      images: [
+        {
+          description: "bsp bild horizontal",
+          url: "./assets/photo/barcelona/bspbildhorizontal.jpg",
+        },
+        {
+          description: "blendung exhib",
+          url: "./assets/exhibitions/blendung/img_4697.jpg",
+        },
+      ],
       subcategories: [],
     },
     {
@@ -13,7 +22,66 @@ const config = {
           name: "barcelona",
           content: {
             text: null,
-            images: ["./assets/berlin_at_night/IMG_4697.JPG"],
+            images: [
+              {
+                description: "bsp bild vertikal 2",
+                url: "./assets/photo/barcelona/bsp2bildervertikal.png",
+              },
+              {
+                description: "bsp bild horizontal",
+                url: "./assets/photo/barcelona/bspbildhorizontal.jpg",
+              },
+              {
+                description: "bsp bild vertikal",
+                url: "./assets/photo/barcelona/bspbildvertikal.jpg",
+              },
+            ],
+          },
+        },
+        {
+          name: "zookies",
+          content: {
+            text: null,
+            images: [
+              {
+                description: "zookies first imgage",
+                url: "./assets/photo/zookies/dscf9865-3.jpg",
+              },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      name: "exhibitions",
+      subcategories: [
+        {
+          name: "blendung",
+          content: {
+            text: null,
+            images: [
+              {
+                description: "zookies first imgage",
+                url: "./assets/photo/zookies/dscf9865-3.jpg",
+              },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      name: "publications",
+      subcategories: [
+        {
+          name: "my hands need to see what my eyes cant feel",
+          content: {
+            text: null,
+            images: [
+              {
+                description: "zookies first imgage",
+                url: "./assets/photo/zookies/dscf9865-3.jpg",
+              },
+            ],
           },
         },
       ],
@@ -28,13 +96,26 @@ function generateMenu(categories) {
   navList.innerHTML = ""; // Clear existing menu items if any
   loadCarousel(categories[0].images);
 
-  categories.forEach((category) => {
+  categories.forEach((category, index) => {
     const li = document.createElement("li");
-    li.className = "menu-item";
+    if (index == 0) {
+      li.className = "menu-item active";
+    } else {
+      li.className = "menu-item";
+    }
     const a = document.createElement("a");
     a.href = "#";
     a.textContent = category.name;
     a.className = "toggle-submenu";
+
+    if (category.images != null) {
+      a.onclick = () => {
+        loadCarousel(category.images); // Load images on click
+        const allMenuItems = navList.querySelectorAll(".active");
+        allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
+        a.className = "active";
+      };
+    }
 
     const submenu = document.createElement("ul");
     submenu.className = "submenu";
@@ -43,7 +124,12 @@ function generateMenu(categories) {
       const subA = document.createElement("a");
       subA.href = "#";
       subA.textContent = sub.name;
-      subA.onclick = () => loadCarousel(sub.content.images); // Load images on click
+      subA.onclick = () => {
+        loadCarousel(sub.content.images); // Load images on click
+        const allMenuItems = navList.querySelectorAll(".active");
+        allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
+        subA.className = "active";
+      };
       subLi.appendChild(subA);
       submenu.appendChild(subLi);
     });
@@ -55,9 +141,6 @@ function generateMenu(categories) {
 }
 
 generateMenu(config.categories);
-
-
-
 
 document.querySelectorAll(".toggle-submenu").forEach((item, index) => {
   item.addEventListener("mouseover", function () {
@@ -93,6 +176,13 @@ function applyOpenedItems() {
     let submenuItems = submenu.querySelectorAll("li");
     let animationDelaySubmenuItems = 200;
 
+    let submenuItemsNames = submenu.querySelectorAll("li a"); // Select all <a> elements within <li> items
+    for (let item of submenuItemsNames) {
+      if (item.classList.contains("active")) {
+        return true; // Return true as soon as one active <a> item is found
+      }
+    }
+
     if (
       submenu.classList.contains("opening") ||
       submenu.classList.contains("closing")
@@ -109,7 +199,7 @@ function applyOpenedItems() {
         item.style.display = "block";
         setTimeout(() => {
           item.style.opacity = 1; // Trigger CSS transition
-        }, animationDelaySubmenuItems * (index));
+        }, animationDelaySubmenuItems * index);
       });
 
       setTimeout(() => {
@@ -132,6 +222,13 @@ function applyClosedItems() {
     let submenu = parentElement.querySelector(".submenu");
     let submenuItems = submenu.querySelectorAll("li");
     let animationDelaySubmenuItems = 200;
+
+    let submenuItemsNames = submenu.querySelectorAll("li a"); // Select all <a> elements within <li> items
+    for (let item of submenuItemsNames) {
+      if (item.classList.contains("active")) {
+        return true; // Return true as soon as one active <a> item is found
+      }
+    }
 
     if (
       submenu.classList.contains("opening") ||

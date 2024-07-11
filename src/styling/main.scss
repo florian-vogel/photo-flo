@@ -12,10 +12,10 @@ body {
   font-family: "Inter", "Arial", sans-serif !important;
   margin: 0;
   font-size: 10px !important;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
+  padding-top: 12vh;
+  padding-bottom: 12vh;
   padding-left: 2vh;
-  padding-right: 2vh;
+  //padding-right: 8vh;
 }
 
 h1 {
@@ -72,16 +72,35 @@ ul.nav-list {
     a:link,
     a:visited {
       color: black;
+
       //color: #939393;
       text-decoration: none;
-      //opacity: 0;
+      opacity: 0;
     }
   }
 
-  & > li:not(.active) {
+  /*   & > li:not(.active) {
     a {
+      color: black;
       opacity: 0;
     }
+  } */
+
+  .active {
+    a {
+      color: #939393 !important;
+      opacity: 1 !important;
+    }
+
+    &.a {
+      color: #939393 !important;
+      opacity: 1 !important;
+    }
+  }
+
+  .active {
+    color: #939393 !important;
+    opacity: 1 !important;
   }
 
   a:hover {
@@ -96,26 +115,27 @@ ul.nav-list {
   }
 
   a {
-    transition: opacity 0.5s ease-in-out;
+    //transition: opacity 0.5s ease-in-out;
+    //transition: color, opacity 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out, opacity 0.5s ease-in-out;
   }
 
   & > li {
     margin-bottom: 0;
     height: 100%;
-    
-/*     .toggle-submenu:hover {
+
+    /*     .toggle-submenu:hover {
       text-decoration: underline;
     } */
+  }
 
-    &.active {
-      .toggle-submenu {
-        text-decoration: underline !important;
-      }
+  .active {
+    text-decoration: underline !important;
+    opacity: 1 !important;
 
-      a {
+    /*       a {
         color: black;
-      }
-    }
+      } */
   }
 
   .submenu {
