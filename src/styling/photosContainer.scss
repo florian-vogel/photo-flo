@@ -43,4 +43,15 @@
       color: #939393;
     }
   }
+
+  img {
+    //width: 100%;
+    display: block;
+    opacity: 0; /* Start with the image fully transparent */
+    transition: opacity 0.8s ease-in-out; /* Transition effect duration and style */
+  }
+
+  .fade-in {
+    opacity: 1; /* Fully visible when the 'fade-in' class is added */
+  }
 }

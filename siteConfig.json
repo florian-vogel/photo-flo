@@ -1,3 +1,18 @@
 {
-    "pageTitle": "Liva Vogt"
+  "pageTitle": "Liva Vogt",
+  "categories": [
+    { "name": "liva voigt", "subcategories": [] },
+    {
+      "name": "photo",
+      "subcategories": [
+        {
+          "name": "barcelona",
+          "content": {
+            "text": null,
+            "images": ["./assets/berlin_at_night/IMG_4697.JPG"]
+          }
+        }
+      ]
+    }
+  ]
 }
