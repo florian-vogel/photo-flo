@@ -1,23 +1,27 @@
-const images = [
-    "./assets/berlin_at_night/bsp2bildervertikal.png",
-    "./assets/berlin_at_night/bspbildhorizontal.JPG",
-    "./assets/berlin_at_night/bspbildvertikal.JPG",
-];
-
-let currentIndex = 0;
-
+let images = []; // Initialize an empty array for images
 const imgElement = document.getElementById('carouselImage');
-imgElement.addEventListener('load', function() {
-    this.classList.add('fade-in');
-});
 
-function changeImage(forward = true) {
-    imgElement.classList.remove('fade-in'); // Remove the class to reset opacity to 0
-    setTimeout(() => {
-        currentIndex = forward ? (currentIndex + 1) % images.length : (currentIndex - 1 + images.length) % images.length;
-        imgElement.src = images[currentIndex];
-    }, 800); // Delay the src update to allow the fade out effect
+function loadCarousel(newImages) {
+  images = newImages; // Set the new image array
+  currentIndex = 0; // Reset index to start from the first image
+  imgElement.src = images[currentIndex]; // Load the first image
+  imgElement.classList.add("fade-in"); // Add fade-in to ensure the first image animates in
 }
 
-document.getElementById('carouselImage').addEventListener('click', () => changeImage(true));
-document.getElementById('prevButton').addEventListener('click', () => changeImage(false));
+function changeImage(forward = true) {
+  imgElement.classList.remove("fade-in");
+  setTimeout(() => {
+    currentIndex = forward
+      ? (currentIndex + 1) % images.length
+      : (currentIndex - 1 + images.length) % images.length;
+    imgElement.src = images[currentIndex];
+    imgElement.classList.add("fade-in");
+  }, 800);
+}
+
+document
+  .getElementById("carouselImage")
+  .addEventListener("click", () => changeImage(true));
+document
+  .getElementById("prevButton")
+  .addEventListener("click", () => changeImage(false));
