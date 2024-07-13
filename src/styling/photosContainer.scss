@@ -56,6 +56,6 @@
   }
 
   .fade-in {
-    opacity: 1; /* Fully visible when the 'fade-in' class is added */
+    opacity: 1 !important; /* Fully visible when the 'fade-in' class is added */
   }
 }
