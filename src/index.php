@@ -10,6 +10,7 @@
         <?php include './navigation.html'; ?>
         <?php include './pages/photos.php' ?>
       </div>
+<!--       <div class="information-text">An ongoing index of the best work made by Cargo users</div> -->
     </div>
 
   </main>

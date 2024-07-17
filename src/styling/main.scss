@@ -9,9 +9,10 @@ html.is-animating .transition-fade {
 }
 
 body {
-  font-family: "Inter", "Arial", sans-serif !important;
+  font-family: "Diatype",
+/*   , "Inter", "Arial", sans-serif !important; */
   margin: 0;
-  font-size: 10px !important;
+  font-size: 11px !important;
   padding-top: 12vh;
   padding-bottom: 12vh;
   padding-left: 2vh;
@@ -71,11 +72,11 @@ ul.nav-list {
   li {
     a:link,
     a:visited {
-      color: black;
+      color: #939393;
 
       //color: #939393;
       text-decoration: none;
-      opacity: 0;
+      //opacity: 0;
     }
   }
 
