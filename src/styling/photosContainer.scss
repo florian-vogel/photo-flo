@@ -1,5 +1,5 @@
 .photos-container {
-  width: 100%;
+  //width: 100%;
   height: 100%;
   //padding-top: 5rem;
 
@@ -7,6 +7,7 @@
     flex-direction: row;
     align-items: end;
     padding-right: 0;
+    justify-content: center;
   }
 
   img {
@@ -34,18 +35,6 @@
       //padding-bottom: 3rem;
       margin: auto;
     }
-
-    .subtitle {
-      /*       position: absolute;
-      right: 0;
-      bottom: 0; */
-      margin-right: 2vh;
-      //margin-bottom: 12vh;
-      margin-left: 2vh;
-      //font-size: 0.85rem;
-      text-align: center;
-      color: #939393;
-    }
   }
 
   img {
@@ -58,4 +47,22 @@
   .fade-in {
     opacity: 1 !important; /* Fully visible when the 'fade-in' class is added */
   }
+}
+
+.subtitle {
+  /*       position: absolute;
+      right: 0;
+      bottom: 0; */
+  margin-right: 2vh;
+  //margin-bottom: 12vh;
+  margin-left: 2vh;
+  //font-size: 0.85rem;
+  text-align: right;
+  color: #939393;
+  font-size: 9px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }

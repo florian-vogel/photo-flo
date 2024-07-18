@@ -7,10 +7,11 @@
     <!-- your content that will be swapped goes here -->
     <div id="content">
       <div class="flex-container">
-        <?php include './navigation.html'; ?>
+        <?php include './pages/navigation.html'; ?>
         <?php include './pages/photos.php' ?>
+        <?php include './pages/description.php' ?>
       </div>
-<!--       <div class="information-text">An ongoing index of the best work made by Cargo users</div> -->
+      <!--          -->
     </div>
 
   </main>

@@ -9,8 +9,9 @@ html.is-animating .transition-fade {
 }
 
 body {
-  font-family: "Diatype",
-/*   , "Inter", "Arial", sans-serif !important; */
+  font-family: "Libre Baskerville";
+  /*    "Diatype", */
+  /*   , "Inter", "Arial", sans-serif !important; */
   margin: 0;
   font-size: 11px !important;
   padding-top: 12vh;
@@ -118,7 +119,9 @@ ul.nav-list {
   a {
     //transition: opacity 0.5s ease-in-out;
     //transition: color, opacity 0.5s ease-in-out;
-    transition: color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition:
+      color 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
   }
 
   & > li {
@@ -128,6 +131,10 @@ ul.nav-list {
     /*     .toggle-submenu:hover {
       text-decoration: underline;
     } */
+  }
+
+  .toggle-submenu {
+    font-style: italic;
   }
 
   .active {
@@ -185,4 +192,12 @@ ul.nav-list {
     transition: opacity 1s ease-in-out; /* Transition for opacity */
     margin-bottom: 10px !important;
   }
+}
+
+nav {
+  flex-grow: 1;
+}
+
+#carouselDescription {
+  align-self: flex-start;
 }
