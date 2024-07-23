@@ -113,7 +113,7 @@ function generateMenu(categories) {
         loadCarousel(category.images); // Load images on click
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
-        a.className = "active";
+        a.classList.add("active");
       };
     }
 
