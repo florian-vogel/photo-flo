@@ -39,7 +39,7 @@ function preloadImages(index) {
 
   // TODO: still jumping
 function changeImage(direction = "forward") {
-  imgElement.classList.remove("fade-in"); // Remove the fade-in effect to prepare for the next image
+  imgElement.classList.remove("fade-in"); 
   currentIndex =
     direction === "forward"
       ? (currentIndex + 1) % images.length
@@ -47,23 +47,24 @@ function changeImage(direction = "forward") {
       ? (currentIndex - 1 + images.length) % images.length
       : currentIndex;
 
-  const newImg = new Image(); // Create a new Image object to preload the image
+  const newImg = new Image(); 
   newImg.onload = () => {
     setTimeout(() => {
-      // Wait 800ms after the image has loaded
-      imgElement.src = newImg.src; // Change the src of the image element to the loaded image
-      imgElement.classList.add("fade-in"); // Add the fade-in class once the image is ready
-      descriptionElement.innerText = images[currentIndex].description; // Update the description
+      imgElement.src = newImg.src; 
+      imgElement.classList.add("fade-in"); 
+      descriptionElement.innerText = images[currentIndex].description; 
     }, 800);
   };
-  newImg.src = images[currentIndex].url; // Start loading the image
+  newImg.src = images[currentIndex].url; 
 
-  preloadImages(currentIndex); // Preload next images
+  preloadImages(currentIndex); 
 }
 
 document
   .getElementById("carouselImage")
   .addEventListener("click", () => changeImage("forward"));
-document
+
+/* TODO: implement prev button */
+/* document
   .getElementById("prevButton")
-  .addEventListener("click", () => changeImage("backward"));
+  .addEventListener("click", () => changeImage("backward")); */
