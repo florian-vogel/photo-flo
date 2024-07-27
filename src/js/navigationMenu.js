@@ -258,3 +258,32 @@ function applyClosedItems() {
     }
   });
 }
+
+// TODO: is this necessary
+const preloadFirstImage = (config) => {
+    // Preload an image by creating a new Image object and setting its source
+    const preloadImage = (url) => {
+        const img = new Image();
+        img.src = url;
+    };
+
+    // Loop through each category in the config
+    config.categories.forEach(category => {
+        // Preload the first image of the category if available
+        if (category.images && category.images.length > 0) {
+            preloadImage(category.images[0].url);
+        }
+
+        // Check for subcategories and preload the first image of each
+        if (category.subcategories && category.subcategories.length > 0) {
+            category.subcategories.forEach(subcategory => {
+                if (subcategory.content && subcategory.content.images && subcategory.content.images.length > 0) {
+                    preloadImage(subcategory.content.images[0].url);
+                }
+            });
+        }
+    });
+};
+
+// Call the function with the provided config
+preloadFirstImage(config);
