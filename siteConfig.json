@@ -1,7 +1,20 @@
 {
-  "pageTitle": "Liva Vogt",
+  "pageTitle": "liva voigt",
   "categories": [
-    { "name": "liva voigt", "subcategories": [] },
+    {
+      "name": "liva voigt",
+      "images": [
+        {
+          "description": "bsp bild horizontal",
+          "url": "./assets/photo/barcelona/bspbildhorizontal.jpg"
+        },
+        {
+          "description": "blendung exhib",
+          "url": "./assets/exhibitions/blendung/img_4697.jpg"
+        }
+      ],
+      "subcategories": []
+    },
     {
       "name": "photo",
       "subcategories": [
@@ -9,7 +22,66 @@
           "name": "barcelona",
           "content": {
             "text": null,
-            "images": ["./assets/berlin_at_night/IMG_4697.JPG"]
+            "images": [
+              {
+                "description": "bsp bild vertikal 2",
+                "url": "./assets/photo/barcelona/bsp2bildervertikal.png"
+              },
+              {
+                "description": "bsp bild horizontal",
+                "url": "./assets/photo/barcelona/bspbildhorizontal.jpg"
+              },
+              {
+                "description": "bsp bild vertikal",
+                "url": "./assets/photo/barcelona/bspbildvertikal.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "name": "zookies",
+          "content": {
+            "text": null,
+            "images": [
+              {
+                "description": "zookies first imgage",
+                "url": "./assets/photo/zookies/dscf9865-3.jpg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "exhibitions",
+      "subcategories": [
+        {
+          "name": "blendung",
+          "content": {
+            "text": null,
+            "images": [
+              {
+                "description": "zookies first imgage",
+                "url": "./assets/photo/zookies/dscf9865-3.jpg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "publications",
+      "subcategories": [
+        {
+          "name": "my hands need to see what my eyes cant feel",
+          "content": {
+            "text": null,
+            "images": [
+              {
+                "description": "zookies first imgage",
+                "url": "./assets/photo/zookies/dscf9865-3.jpg"
+              }
+            ]
           }
         }
       ]

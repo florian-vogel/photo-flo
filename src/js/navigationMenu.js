@@ -1,95 +1,23 @@
-const config = {
-  pageTitle: "liva voigt",
-  categories: [
-    {
-      name: "liva voigt",
-      images: [
-        {
-          description: "bsp bild horizontal",
-          url: "./assets/photo/barcelona/bspbildhorizontal.jpg",
-        },
-        {
-          description: "blendung exhib",
-          url: "./assets/exhibitions/blendung/img_4697.jpg",
-        },
-      ],
-      subcategories: [],
-    },
-    {
-      name: "photo",
-      subcategories: [
-        {
-          name: "barcelona",
-          content: {
-            text: null,
-            images: [
-              {
-                description: "bsp bild vertikal 2",
-                url: "./assets/photo/barcelona/bsp2bildervertikal.png",
-              },
-              {
-                description: "bsp bild horizontal",
-                url: "./assets/photo/barcelona/bspbildhorizontal.jpg",
-              },
-              {
-                description: "bsp bild vertikal",
-                url: "./assets/photo/barcelona/bspbildvertikal.jpg",
-              },
-            ],
-          },
-        },
-        {
-          name: "zookies",
-          content: {
-            text: null,
-            images: [
-              {
-                description: "zookies first imgage",
-                url: "./assets/photo/zookies/dscf9865-3.jpg",
-              },
-            ],
-          },
-        },
-      ],
-    },
-    {
-      name: "exhibitions",
-      subcategories: [
-        {
-          name: "blendung",
-          content: {
-            text: null,
-            images: [
-              {
-                description: "zookies first imgage",
-                url: "./assets/photo/zookies/dscf9865-3.jpg",
-              },
-            ],
-          },
-        },
-      ],
-    },
-    {
-      name: "publications",
-      subcategories: [
-        {
-          name: "my hands need to see what my eyes cant feel",
-          content: {
-            text: null,
-            images: [
-              {
-                description: "zookies first imgage",
-                url: "./assets/photo/zookies/dscf9865-3.jpg",
-              },
-            ],
-          },
-        },
-      ],
-    },
-  ],
-};
+async function loadConfig() {
+  try {
+    const response = await fetch("./../siteConfig.json");
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const config = await response.json();
+    console.log(config);
+    return config; // This returns the config object from the async function
+  } catch (error) {
+    console.error("Failed to fetch config:", error);
+  }
+}
 
-document.title = config.pageTitle; // Set the page title
+var menuItems = document.querySelectorAll(".menu-item");
+var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false));
+
+// Call the function to load the config
+
+//document.title = config.pageTitle; // Set the page title
 
 function generateMenu(categories) {
   const navList = document.querySelector(".nav-list");
@@ -140,7 +68,31 @@ function generateMenu(categories) {
   });
 }
 
-generateMenu(config.categories);
+async function main() {
+  const config = await loadConfig();
+  generateMenu(config.categories);
+  preloadFirstImage(config);
+  addHoverListerners();
+}
+main();
+
+function addHoverListerners() {
+  document.querySelectorAll(".toggle-submenu").forEach((item, index) => {
+    item.addEventListener("mouseover", function () {
+      console.log("index: ", index, ", true");
+      menuOpen[index] = true;
+      applyMenuState();
+    });
+  });
+
+  document.querySelectorAll(".menu-item").forEach((item, index) => {
+    item.addEventListener("mouseleave", function () {
+      console.log("index: ", index, ", false");
+      menuOpen[index] = false;
+      applyMenuState();
+    });
+  });
+}
 
 document.querySelectorAll(".toggle-submenu").forEach((item, index) => {
   item.addEventListener("mouseover", function () {
@@ -163,9 +115,9 @@ function applyMenuState() {
   applyClosedItems();
 }
 
-var menuItems = document.querySelectorAll(".menu-item");
-
 function applyOpenedItems() {
+  var menuItems = document.querySelectorAll(".menu-item");
+
   menuItems.forEach((item, index) => {
     if (!menuOpen[index]) {
       return;
@@ -211,9 +163,9 @@ function applyOpenedItems() {
   });
 }
 
-var menuToggles = document.querySelectorAll(".toggle-submenu");
-
 function applyClosedItems() {
+  var menuToggles = document.querySelectorAll(".toggle-submenu");
+
   menuToggles.forEach((item, index) => {
     if (menuOpen[index]) {
       return;
@@ -261,29 +213,32 @@ function applyClosedItems() {
 
 // TODO: is this necessary
 const preloadFirstImage = (config) => {
-    // Preload an image by creating a new Image object and setting its source
-    const preloadImage = (url) => {
-        const img = new Image();
-        img.src = url;
-    };
+  // Preload an image by creating a new Image object and setting its source
+  const preloadImage = (url) => {
+    const img = new Image();
+    img.src = url;
+  };
 
-    // Loop through each category in the config
-    config.categories.forEach(category => {
-        // Preload the first image of the category if available
-        if (category.images && category.images.length > 0) {
-            preloadImage(category.images[0].url);
-        }
+  // Loop through each category in the config
+  config.categories.forEach((category) => {
+    // Preload the first image of the category if available
+    if (category.images && category.images.length > 0) {
+      preloadImage(category.images[0].url);
+    }
 
-        // Check for subcategories and preload the first image of each
-        if (category.subcategories && category.subcategories.length > 0) {
-            category.subcategories.forEach(subcategory => {
-                if (subcategory.content && subcategory.content.images && subcategory.content.images.length > 0) {
-                    preloadImage(subcategory.content.images[0].url);
-                }
-            });
+    // Check for subcategories and preload the first image of each
+    if (category.subcategories && category.subcategories.length > 0) {
+      category.subcategories.forEach((subcategory) => {
+        if (
+          subcategory.content &&
+          subcategory.content.images &&
+          subcategory.content.images.length > 0
+        ) {
+          preloadImage(subcategory.content.images[0].url);
         }
-    });
+      });
+    }
+  });
 };
 
 // Call the function with the provided config
-preloadFirstImage(config);

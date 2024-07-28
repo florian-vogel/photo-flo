@@ -1,10 +1,10 @@
-var menuItems = document.querySelectorAll(".menu-item");
+/* var menuItems = document.querySelectorAll(".menu-item");
 var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false));
 
-document.addEventListener("DOMContentLoaded", function () {
-  const swup = new Swup(); // initializes Swup
+document.addEventListener("DOMContentLoaded", function () { */
+  //const swup = new Swup(); // initializes Swup
 
-  fetch("config.json")
+/*   fetch("config.json")
     .then((response) => response.json())
     .then((config) => {
       // Loop through all elements with a 'data-config' attribute
@@ -19,5 +19,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     })
-    .catch((error) => console.error("Failed to load configuration:", error));
-});
+    .catch((error) => console.error("Failed to load configuration:", error)); */
+/* }); */
