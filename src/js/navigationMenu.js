@@ -5,19 +5,11 @@ async function loadConfig() {
       throw new Error("Network response was not ok");
     }
     const config = await response.json();
-    console.log(config);
-    return config; // This returns the config object from the async function
+    return config;
   } catch (error) {
     console.error("Failed to fetch config:", error);
   }
 }
-
-var menuItems = document.querySelectorAll(".menu-item");
-var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false));
-
-// Call the function to load the config
-
-//document.title = config.pageTitle; // Set the page title
 
 function generateMenu(categories) {
   const navList = document.querySelector(".nav-list");
@@ -72,29 +64,29 @@ async function main() {
   const config = await loadConfig();
   generateMenu(config.categories);
   preloadFirstImage(config);
-  addHoverListerners();
+  var menuItems = document.querySelectorAll(".menu-item");
+  var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false));
+  addHoverListerners(menuOpen);
 }
 main();
 
-function addHoverListerners() {
+function addHoverListerners(menuOpen) {
   document.querySelectorAll(".toggle-submenu").forEach((item, index) => {
     item.addEventListener("mouseover", function () {
-      console.log("index: ", index, ", true");
       menuOpen[index] = true;
-      applyMenuState();
+      applyMenuState(menuOpen);
     });
   });
 
   document.querySelectorAll(".menu-item").forEach((item, index) => {
     item.addEventListener("mouseleave", function () {
-      console.log("index: ", index, ", false");
       menuOpen[index] = false;
-      applyMenuState();
+      applyMenuState(menuOpen);
     });
   });
 }
 
-document.querySelectorAll(".toggle-submenu").forEach((item, index) => {
+/* document.querySelectorAll(".toggle-submenu").forEach((item, index) => {
   item.addEventListener("mouseover", function () {
     console.log("index: ", index, ", true");
     menuOpen[index] = true;
@@ -108,14 +100,22 @@ document.querySelectorAll(".menu-item").forEach((item, index) => {
     menuOpen[index] = false;
     applyMenuState();
   });
-});
+}); */
 
-function applyMenuState() {
-  applyOpenedItems();
-  applyClosedItems();
+function applyMenuState(menuOpen) {
+  if (!menuOpen) {
+    return;
+  }
+
+  applyOpenedItems(menuOpen);
+  applyClosedItems(menuOpen);
 }
 
-function applyOpenedItems() {
+function applyOpenedItems(menuOpen) {
+  if (!menuOpen) {
+    return;
+  }
+
   var menuItems = document.querySelectorAll(".menu-item");
 
   menuItems.forEach((item, index) => {
@@ -163,7 +163,7 @@ function applyOpenedItems() {
   });
 }
 
-function applyClosedItems() {
+function applyClosedItems(menuOpen) {
   var menuToggles = document.querySelectorAll(".toggle-submenu");
 
   menuToggles.forEach((item, index) => {
