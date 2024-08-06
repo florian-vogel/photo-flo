@@ -14,7 +14,7 @@ async function loadConfig() {
 function generateMenu(categories) {
   const navList = document.querySelector(".nav-list");
   navList.innerHTML = ""; // Clear existing menu items if any
-  loadCarousel(categories[0].images);
+  loadCarousel(categories[0]);
 
   categories.forEach((category, index) => {
     const li = document.createElement("li");
@@ -30,7 +30,7 @@ function generateMenu(categories) {
 
     if (category.images != null) {
       a.onclick = () => {
-        loadCarousel(category.images); // Load images on click
+        loadCarousel(category); // Load images on click
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         a.classList.add("active");
@@ -45,7 +45,7 @@ function generateMenu(categories) {
       subA.href = "#";
       subA.textContent = sub.name;
       subA.onclick = () => {
-        loadCarousel(sub.content.images); // Load images on click
+        loadCarousel(sub.content); // Load images on click
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         subA.className = "active";
