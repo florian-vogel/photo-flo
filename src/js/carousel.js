@@ -8,10 +8,6 @@ const categoryDescriptionElement = document.getElementById(
 function loadCarousel(category) {
   currentCategory = category; // Set the new image array
   currentIndex = 0; // Reset index to start from the first image
-  /*   let imageDescription = images[currentIndex].description;
-  if (imageDescription) {
-    descriptionElement.innerText = category.description;
-  } */
 
   changeImage("stay");
 }
@@ -27,22 +23,6 @@ function preloadImages(index) {
   const prevImage = new Image(); // Creates another new Image object
   prevImage.src = images[prevIndex].url; // Sets the source of the previous image to preload
 }
-
-/* function changeImage(direction = "forward") {
-  imgElement.classList.remove("fade-in");
-  setTimeout(() => {
-    currentIndex =
-      direction == "forward"
-        ? (currentIndex + 1) % images.length
-        : direction == "backward"
-        ? (currentIndex - 1 + images.length) % images.length
-        : currentIndex;
-    preloadImages(currentIndex);
-    imgElement.src = images[currentIndex].url;
-    imgElement.classList.add("fade-in");
-    descriptionElement.innerText = images[currentIndex].description;
-  }, 800);
-} */
 
 // TODO: still jumping
 function changeImage(direction = "forward") {

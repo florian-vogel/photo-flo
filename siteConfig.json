@@ -25,6 +25,10 @@
             "text": null,
             "images": [
               {
+                "description": "bsp bild vertical",
+                "url": "./assets/photo/barcelona/bsp2bildervertikal.png"
+              },
+              {
                 "description": "bsp bild horizontal",
                 "url": "./assets/photo/barcelona/bspbildhorizontal.jpg"
               },
