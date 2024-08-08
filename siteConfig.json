@@ -6,11 +6,11 @@
       "images": [
         {
           "description": "bsp bild horizontal",
-          "url": "./assets/photo/barcelona/bspbildhorizontal.jpg"
+          "url": "./assets/exhibitions/blendung/img_4697.jpg"
         },
         {
           "description": "blendung exhib",
-          "url": "./assets/exhibitions/blendung/img_4697.jpg"
+          "url": "./assets/photo/barcelona/bspbildhorizontal.jpg"
         }
       ],
       "subcategories": [],
