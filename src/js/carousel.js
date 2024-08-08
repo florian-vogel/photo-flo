@@ -1,5 +1,5 @@
 let currentCategory = []; // Initialize an empty array for images
-const imgElement = document.getElementById("carouselImage");
+var imgElement = document.getElementById("carouselImage");
 const descriptionElement = document.getElementById("carouselDescription");
 const categoryDescriptionElement = document.getElementById(
   "categoryDescription"
@@ -34,11 +34,27 @@ function changeImage(direction = "forward") {
       ? (currentIndex - 1 + currentCategory.images.length) % images.length
       : currentIndex;
 
+  const imgContainer = imgElement.parentNode;
+  const hiddenImgElement = document.createElement("img");
+  hiddenImgElement.addEventListener("click", () => changeImage("forward"));
+  hiddenImgElement.style.display = "none";
+
+  // Append the hidden image to the same container as the visible image
+  imgContainer.appendChild(hiddenImgElement);
+
   const newImg = new Image();
   newImg.onload = () => {
     setTimeout(() => {
-      imgElement.src = newImg.src;
-      imgElement.classList.add("fade-in");
+      imgElement.style.display = "none";
+      hiddenImgElement.style.display = "inline";
+      //imgElement.src = newImg.src;
+      hiddenImgElement.src = newImg.src;
+      //imgElement.classList.add("fade-in");
+      hiddenImgElement.style.opacity = 0;
+      setTimeout(() => {
+        hiddenImgElement.classList.add("fade-in");
+      }, 100);
+      imgElement = hiddenImgElement;
       descriptionElement.innerText =
         currentCategory.images[currentIndex].description;
 
