@@ -157,7 +157,7 @@ function applyOpenedItems(menuOpen) {
       setTimeout(() => {
         submenu.classList.remove("opening");
         submenu.classList.add("active-submenu");
-        applyMenuState();
+        applyMenuState(menuOpen);
       }, (submenuItems.length + 1) * animationDelaySubmenuItems);
     }
   });
@@ -205,7 +205,7 @@ function applyClosedItems(menuOpen) {
 
       setTimeout(() => {
         submenu.classList.remove("closing");
-        applyMenuState();
+        applyMenuState(menuOpen);
       }, (submenuItems.length + 1) * animationDelaySubmenuItems);
     }
   });
