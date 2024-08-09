@@ -8,6 +8,8 @@ const categoryDescriptionElement = document.getElementById(
 function loadCarousel(category) {
   currentCategory = category; // Set the new image array
   currentIndex = 0; // Reset index to start from the first image
+  categoryDescriptionElement.style.opacity = 0;
+  categoryDescriptionElement.classList.remove("fade-in");
 
   changeImage("stay");
 }
@@ -56,6 +58,7 @@ function changeImage(direction = "forward") {
       setTimeout(() => {
         hiddenImgElement.classList.add("fade-in");
         descriptionElement.classList.add("fade-in");
+        categoryDescriptionElement.classList.add("fade-in");
       }, 100);
       imgElement = hiddenImgElement;
       descriptionElement.innerText =
