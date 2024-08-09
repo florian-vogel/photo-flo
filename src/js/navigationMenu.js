@@ -29,6 +29,7 @@ function generateMenu(categories) {
     a.className = "toggle-submenu";
 
     if (category.images != null) {
+      a.classList.add("clickable");
       a.onclick = () => {
         loadCarousel(category); // Load images on click
         const allMenuItems = navList.querySelectorAll(".active");
@@ -44,11 +45,12 @@ function generateMenu(categories) {
       const subA = document.createElement("a");
       subA.href = "#";
       subA.textContent = sub.name;
+      subA.classList.add("clickable");
       subA.onclick = () => {
         loadCarousel(sub.content); // Load images on click
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
-        subA.className = "active";
+        subA.classList.add("active");
       };
       subLi.appendChild(subA);
       submenu.appendChild(subLi);

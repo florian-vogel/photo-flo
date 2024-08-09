@@ -38,6 +38,8 @@ function changeImage(direction = "forward") {
   const hiddenImgElement = document.createElement("img");
   hiddenImgElement.addEventListener("click", () => changeImage("forward"));
   hiddenImgElement.style.display = "none";
+  descriptionElement.style.opacity = 0;
+  descriptionElement.classList.remove("fade-in");
 
   // Append the hidden image to the same container as the visible image
   imgContainer.appendChild(hiddenImgElement);
@@ -53,6 +55,7 @@ function changeImage(direction = "forward") {
       hiddenImgElement.style.opacity = 0;
       setTimeout(() => {
         hiddenImgElement.classList.add("fade-in");
+        descriptionElement.classList.add("fade-in");
       }, 100);
       imgElement = hiddenImgElement;
       descriptionElement.innerText =

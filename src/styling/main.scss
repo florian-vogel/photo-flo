@@ -29,7 +29,7 @@ body {
   /*    "Diatype", */
   /*   , "Inter", "Arial", sans-serif !important; */
   margin: 0;
-  font-size: 11px !important;
+  font-size: 10px !important;
   padding-top: 12vh;
   padding-bottom: 12vh;
   //padding-left: 2vh;
@@ -137,6 +137,12 @@ ul.nav-list {
   a {
     //transition: opacity 0.5s ease-in-out;
     //transition: color, opacity 0.5s ease-in-out;
+    cursor: default;
+
+    &.clickable {
+      cursor: pointer;
+    }
+
     transition:
       color 0.5s ease-in-out,
       opacity 0.5s ease-in-out;
@@ -218,4 +224,6 @@ nav {
 
 #carouselDescription {
   align-self: flex-start;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out; /* Transition effect duration and style */
 }
