@@ -63,16 +63,34 @@ function generateMenu(categories) {
 }
 
 async function main() {
+  hideContent();
   const config = await loadConfig();
   generateMenu(config.categories);
   preloadFirstImage(config);
   var menuItems = document.querySelectorAll(".menu-item");
   var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false));
-  addHoverListerners(menuOpen);
+  addHoverListeners(menuOpen);
+
+  setTimeout(() => {
+    displayContent();
+  }, 1000);
 }
 main();
 
-function addHoverListerners(menuOpen) {
+function displayContent() {
+  document.body.style.opacity = 1;
+}
+
+function hideContent() {
+  document.body.style.transition = "none"; // Temporarily disable the transition
+  document.body.offsetHeight; // Force reflow to ensure the transition is really disabled
+  document.body.style.opacity = "0"; // Change opacity without transition
+  setTimeout(() => {
+    document.body.style.transition = "opacity 0.8s ease-in-out"; // Re-enable the transition for next time
+  }, 0); // Re-enable after the opacity change has taken effect
+}
+
+function addHoverListeners(menuOpen) {
   document.querySelectorAll(".toggle-submenu").forEach((item, index) => {
     item.addEventListener("mouseover", function () {
       menuOpen[index] = true;
