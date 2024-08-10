@@ -35,6 +35,11 @@ function generateMenu(categories) {
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         a.classList.add("active");
+        var menuItems = document.querySelectorAll(".menu-item");
+        var menuOpen = [true].concat(
+          new Array(menuItems.length - 1).fill(false)
+        );
+        applyMenuState(menuOpen);
       };
     }
 
@@ -51,6 +56,12 @@ function generateMenu(categories) {
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         subA.classList.add("active");
+        // TODO: collapse all other submenues
+        var menuItems = document.querySelectorAll(".menu-item");
+        var menuOpen = [true].concat(
+          new Array(menuItems.length - 1).fill(false)
+        );
+        applyMenuState(menuOpen);
       };
       subLi.appendChild(subA);
       submenu.appendChild(subLi);
@@ -77,6 +88,7 @@ async function main() {
 }
 main();
 
+// TODO: outsource hideContent code
 function displayContent() {
   document.body.style.opacity = 1;
 }
