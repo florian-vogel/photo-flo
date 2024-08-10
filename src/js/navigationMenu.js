@@ -84,7 +84,7 @@ async function main() {
 
   setTimeout(() => {
     displayContent();
-  }, 1000);
+  }, 1500);
 }
 main();
 
