@@ -11,7 +11,7 @@ async function loadConfig() {
   }
 }
 
-function generateMenu(categories) {
+function generateMenu(categories, menuOpen) {
   const navList = document.querySelector(".nav-list");
   navList.innerHTML = ""; // Clear existing menu items if any
   loadCarousel(categories[0]);
@@ -31,14 +31,18 @@ function generateMenu(categories) {
     if (category.images != null) {
       a.classList.add("clickable");
       a.onclick = () => {
+        var menuItems = document.querySelectorAll(".menu-item");
+        if (menuItems[index].querySelectorAll(".closing").length > 0) {
+          return;
+        }
         loadCarousel(category); // Load images on click
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         a.classList.add("active");
-        var menuItems = document.querySelectorAll(".menu-item");
-        var menuOpen = [true].concat(
+        menuOpen[index] = true;
+        /*         var menuOpen = [true].concat(
           new Array(menuItems.length - 1).fill(false)
-        );
+        ); */
         applyMenuState(menuOpen);
       };
     }
@@ -52,15 +56,20 @@ function generateMenu(categories) {
       subA.textContent = sub.name;
       subA.classList.add("clickable");
       subA.onclick = () => {
+        var menuItems = document.querySelectorAll(".menu-item");
+        if (menuItems[index].querySelectorAll(".closing").length > 0) {
+          return;
+        }
         loadCarousel(sub.content); // Load images on click
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         subA.classList.add("active");
         // TODO: collapse all other submenues
-        var menuItems = document.querySelectorAll(".menu-item");
-        var menuOpen = [true].concat(
+        /*         var menuOpen = [true].concat(
           new Array(menuItems.length - 1).fill(false)
-        );
+        ); */
+        /*         var menuOpen = new Array(menuItems.length); */
+        menuOpen[index] = true;
         applyMenuState(menuOpen);
       };
       subLi.appendChild(subA);
@@ -76,10 +85,12 @@ function generateMenu(categories) {
 async function main() {
   hideContent();
   const config = await loadConfig();
-  generateMenu(config.categories);
+  var menuItems = config.categories.length;
+  var menuOpen = [true].concat(new Array(menuItems - 1).fill(false));
+  generateMenu(config.categories, menuOpen);
   preloadFirstImage(config);
-  var menuItems = document.querySelectorAll(".menu-item");
-  var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false));
+  /*   var menuItems = document.querySelectorAll(".menu-item");
+  var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false)); */
   addHoverListeners(menuOpen);
 
   setTimeout(() => {

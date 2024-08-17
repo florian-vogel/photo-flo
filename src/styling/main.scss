@@ -204,6 +204,12 @@ ul.nav-list {
   }
 
   .submenu.closing {
+    li a {
+      cursor: default !important;
+    }
+  }
+
+  .submenu.closing {
     //color: #939393;
   }
 
