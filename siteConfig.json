@@ -50,6 +50,66 @@
               }
             ]
           }
+        },
+        {
+          "name": "zookies has seen better days",
+          "content": {
+            "text": null,
+            "images": [
+              {
+                "description": "zookies first imgage",
+                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "name": "all around the world",
+          "content": {
+            "text": null,
+            "images": [
+              {
+                "description": "zookies first imgage",
+                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "name": "come and play with me",
+          "content": {
+            "text": null,
+            "images": [
+              {
+                "description": "zookies first imgage",
+                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "name": "going home",
+          "content": {
+            "text": null,
+            "images": [
+              {
+                "description": "zookies first imgage",
+                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "name": "what should i do next",
+          "content": {
+            "text": null,
+            "images": [
+              {
+                "description": "zookies first imgage",
+                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+              }
+            ]
+          }
         }
       ]
     },
