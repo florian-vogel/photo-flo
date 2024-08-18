@@ -243,3 +243,43 @@ body {
   opacity: 0; /* Hide the body content initially */
   transition: opacity 0.8s ease-in-out; /* Transition effect duration and style */
 }
+
+#buttonLeft,
+#buttonRight {
+  position: absolute;
+  top: 52%;
+  width: 50%;
+  height: 104%;
+  background-color: rgba(0, 0, 0, 0); /* Transparent background */
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  color: #939393;
+  display: flex;
+  transition: color 0.5s ease-in-out;
+  font-size: 10px !important;
+
+  &:hover {
+    color: black;
+  }
+}
+
+#buttonLeft {
+  left: 0;
+  padding-left: 10px; /* Adjust for better text placement */
+  justify-content: right;
+  align-items: flex-end;
+}
+
+#buttonRight {
+  right: 0;
+  text-align: right;
+  padding-right: 10px; /* Adjust for better text placement */
+  align-items: flex-end;
+}
+
+.image-container {
+  position: relative;
+  display: block;
+  margin: auto; /* Center the image horizontally if needed */
+}

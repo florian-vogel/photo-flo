@@ -78,10 +78,9 @@ function changeImage(direction = "forward") {
 }
 
 document
-  .getElementById("carouselImage")
+  .getElementById("buttonLeft")
   .addEventListener("click", () => changeImage("forward"));
 
-/* TODO: implement prev button */
-/* document
-  .getElementById("prevButton")
-  .addEventListener("click", () => changeImage("backward")); */
+document
+  .getElementById("buttonRight")
+  .addEventListener("click", () => changeImage("backward"));
