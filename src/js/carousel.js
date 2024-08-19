@@ -79,8 +79,8 @@ function changeImage(direction = "forward") {
 
 document
   .getElementById("buttonLeft")
-  .addEventListener("click", () => changeImage("forward"));
+  ?.addEventListener("click", () => changeImage("forward"));
 
 document
   .getElementById("buttonRight")
-  .addEventListener("click", () => changeImage("backward"));
+  ?.addEventListener("click", () => changeImage("backward"));

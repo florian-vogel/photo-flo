@@ -256,7 +256,7 @@ body {
   color: #939393;
   display: flex;
   transition: color 0.5s ease-in-out;
-  font-size: 10px !important;
+  font-size: 12px !important;
   cursor: pointer;
 
   &:hover {
@@ -284,4 +284,11 @@ body {
   margin: auto; /* Center the image horizontally if needed */
 
   cursor: pointer;
+}
+
+.device-too-small-text {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
 }

@@ -13,6 +13,9 @@ async function loadConfig() {
 
 function generateMenu(categories, menuOpen) {
   const navList = document.querySelector(".nav-list");
+  if (!navList) {
+    return;
+  }
   navList.innerHTML = ""; // Clear existing menu items if any
   loadCarousel(categories[0]);
 
