@@ -247,17 +247,17 @@ body {
 #buttonLeft,
 #buttonRight {
   position: absolute;
-  top: 52%;
+  //top: 52%;
   width: 50%;
   height: 104%;
   background-color: rgba(0, 0, 0, 0); /* Transparent background */
   border: none;
-  cursor: pointer;
-  transform: translateY(-50%);
+  //transform: translateY(-50%);
   color: #939393;
   display: flex;
   transition: color 0.5s ease-in-out;
   font-size: 10px !important;
+  cursor: pointer;
 
   &:hover {
     color: black;
@@ -282,4 +282,6 @@ body {
   position: relative;
   display: block;
   margin: auto; /* Center the image horizontally if needed */
+
+  cursor: pointer;
 }

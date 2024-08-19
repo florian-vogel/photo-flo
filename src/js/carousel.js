@@ -38,7 +38,7 @@ function changeImage(direction = "forward") {
 
   const imgContainer = imgElement.parentNode;
   const hiddenImgElement = document.createElement("img");
-  hiddenImgElement.addEventListener("click", () => changeImage("forward"));
+  //hiddenImgElement.addEventListener("click", () => changeImage("forward"));
   hiddenImgElement.style.display = "none";
   descriptionElement.style.opacity = 0;
   descriptionElement.classList.remove("fade-in");
