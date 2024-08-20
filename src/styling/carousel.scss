@@ -1,0 +1,50 @@
+.image-container {
+    position: relative;
+    display: block;
+    margin: auto; 
+
+    cursor: pointer;
+}
+
+#carouselDescription {
+    align-self: flex-start;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out; 
+}
+
+#categoryDescription {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out; 
+}
+
+#buttonLeft,
+#buttonRight {
+    position: absolute;
+    width: 50%;
+    height: 104%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: #939393;
+    display: flex;
+    transition: color 0.5s ease-in-out;
+    font-size: 12px !important;
+    cursor: pointer;
+
+    &:hover {
+        color: black;
+    }
+}
+
+#buttonLeft {
+    left: 0;
+    padding-left: 10px; /* Adjust for better text placement */
+    justify-content: right;
+    align-items: flex-end;
+}
+
+#buttonRight {
+    right: 0;
+    text-align: right;
+    padding-right: 10px; /* Adjust for better text placement */
+    align-items: flex-end;
+}
