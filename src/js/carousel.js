@@ -1,6 +1,6 @@
 let currentCategory = []; // Initialize an empty array for images
 var imgElement = document.getElementById("carouselImage");
-const descriptionElement = document.getElementById("carouselDescription");
+const descriptionElement = document.getElementById("imageDescription");
 const categoryDescriptionElement = document.getElementById(
   "categoryDescription"
 );
