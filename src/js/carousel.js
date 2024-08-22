@@ -59,6 +59,11 @@ function changeImage(direction = "forward") {
         hiddenImgElement.classList.add("fade-in");
         descriptionElement.classList.add("fade-in");
         categoryDescriptionElement.classList.add("fade-in");
+
+        document.getElementById("buttonLeft").style.width = hiddenImgElement.width/2;
+        document.getElementById("buttonRight").style.width = hiddenImgElement.width/2;
+        document.getElementById("buttonLeft").style.height = hiddenImgElement.height;
+        document.getElementById("buttonRight").style.height = hiddenImgElement.height;
       }, 100);
       imgElement = hiddenImgElement;
       descriptionElement.innerText =
