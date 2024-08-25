@@ -32,20 +32,23 @@
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
       // General mobile and tablet detection
-      return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|Tablet|Phone/i.test(
-        userAgent
-      );
+      const isMobi =
+        /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|Tablet|Phone/i.test(
+          userAgent
+        );
+      console.log(isMobi);
+      return isMobi;
     }
 
-    window.onload = checkWidth;
-    window.onresize = checkWidth;
+    //window.onload = checkWidth;
+    //window.onresize = checkWidth;
   </script>
 </head>
 
 <body>
   <div id="content">
     <div class="flex-container">
-      <nav>
+      <nav class="nav-menu">
         <ul class="nav-list flex-container"></ul>
       </nav>
       <div class="photos-container flex-container">
@@ -61,7 +64,7 @@
           </button>
         </div>
       </div>
-      <div class="subtitle">
+      <div class="description">
         <div id="imageDescription"></div>
         <div id="categoryDescription" class="information-text"></div>
       </div>

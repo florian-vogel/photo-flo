@@ -62,8 +62,8 @@ function changeImage(direction = "forward") {
 
         document.getElementById("buttonLeft").style.width = hiddenImgElement.width/2;
         document.getElementById("buttonRight").style.width = hiddenImgElement.width/2;
-        document.getElementById("buttonLeft").style.height = hiddenImgElement.height;
-        document.getElementById("buttonRight").style.height = hiddenImgElement.height;
+        document.getElementById("buttonLeft").style.height = hiddenImgElement.height + 18;
+        document.getElementById("buttonRight").style.height = hiddenImgElement.height + 18;
       }, 100);
       imgElement = hiddenImgElement;
       descriptionElement.innerText =
