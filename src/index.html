@@ -16,7 +16,7 @@
   <script>
     function checkWidth() {
       const currentPath = window.location.pathname;
-      if (window.innerWidth < 1300) {
+      if (window.innerWidth < 1300 || isMobileOrTablet()) {
         // Replace 768 with your desired width
         if (!currentPath.includes("mobile.html")) {
           window.location.href = "mobile.html"; // Redirect to the mobile version
@@ -26,6 +26,15 @@
           window.location.href = "index.html"; // Redirect to the mobile version
         }
       }
+    }
+
+    function isMobileOrTablet() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // General mobile and tablet detection
+      return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|Tablet|Phone/i.test(
+        userAgent
+      );
     }
 
     window.onload = checkWidth;
