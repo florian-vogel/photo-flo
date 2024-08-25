@@ -1,5 +1,5 @@
 async function main() {
-  //hideContent();
+  hideContent();
   const config = await loadConfig();
   var menuItems = config.categories.length;
   var menuOpen = [true].concat(new Array(menuItems - 1).fill(false));
@@ -7,9 +7,9 @@ async function main() {
   preloadFirstImage(config);
   addHoverListeners(menuOpen);
 
-  //setTimeout(() => {
-  //  displayContent();
-  //}, 1500);
+  setTimeout(() => {
+    displayContent();
+  }, 1000);
 }
 main();
 
