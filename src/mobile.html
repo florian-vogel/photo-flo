@@ -4,31 +4,10 @@
   <title data-config="pageTitle">Liva Vogt</title>
   <link rel="stylesheet" href="./styling/main.scss" />
   <link rel="stylesheet" href="./styling/mobile.scss" />
+  <script src="./js/loadMobileVersion.js" defer></script>
   <script src="./js/loadConfig.js" defer></script>
   <script src="./js/carousel.js" defer></script>
   <script src="./js/navigationMenu.js" defer></script>
-  <!--   <link
-    href="https://db.onlinewebfonts.com/c/4c4a87973ef80fc72049e01b9085fadc?family=ABC+Diatype"
-    rel="stylesheet"
-  /> -->
-  <script>
-    function checkWidth() {
-      const currentPath = window.location.pathname;
-      if (window.innerWidth < 1100) {
-        // Replace 768 with your desired width
-        if (!currentPath.includes("mobile.html")) {
-          window.location.href = "mobile.html"; // Redirect to the mobile version
-        }
-      } else {
-        if (!currentPath.includes("index.html")) {
-          window.location.href = "index.html"; // Redirect to the mobile version
-        }
-      }
-    }
-
-    window.onload = checkWidth;
-    window.onresize = checkWidth;
-  </script>
 </head>
 
 <body>

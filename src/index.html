@@ -6,43 +6,10 @@
   <link rel="stylesheet" href="./styling/navbar.scss" />
   <link rel="stylesheet" href="./styling/photosContainer.scss" />
   <link rel="stylesheet" href="./styling/carousel.scss" />
+  <script src="./js/loadMobileVersion.js" defer></script>
   <script src="./js/loadConfig.js" defer></script>
   <script src="./js/carousel.js" defer></script>
   <script src="./js/navigationMenu.js" defer></script>
-  <!--   <link
-    href="https://db.onlinewebfonts.com/c/4c4a87973ef80fc72049e01b9085fadc?family=ABC+Diatype"
-    rel="stylesheet"
-  /> -->
-  <script>
-    function checkWidth() {
-      const currentPath = window.location.pathname;
-      if (window.innerWidth < 1300 || isMobileOrTablet()) {
-        // Replace 768 with your desired width
-        if (!currentPath.includes("mobile.html")) {
-          window.location.href = "mobile.html"; // Redirect to the mobile version
-        }
-      } else {
-        if (!currentPath.includes("index.html")) {
-          window.location.href = "index.html"; // Redirect to the mobile version
-        }
-      }
-    }
-
-    function isMobileOrTablet() {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-      // General mobile and tablet detection
-      const isMobi =
-        /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|Tablet|Phone/i.test(
-          userAgent
-        );
-      console.log(isMobi);
-      return isMobi;
-    }
-
-    //window.onload = checkWidth;
-    //window.onresize = checkWidth;
-  </script>
 </head>
 
 <body>
