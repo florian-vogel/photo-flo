@@ -1,3 +1,18 @@
+async function main() {
+  //hideContent();
+  const config = await loadConfig();
+  var menuItems = config.categories.length;
+  var menuOpen = [true].concat(new Array(menuItems - 1).fill(false));
+  generateMenu(config.categories, menuOpen);
+  preloadFirstImage(config);
+  addHoverListeners(menuOpen);
+
+  //setTimeout(() => {
+  //  displayContent();
+  //}, 1500);
+}
+main();
+
 async function loadConfig() {
   try {
     const response = await fetch("./../siteConfig.json");
@@ -84,23 +99,6 @@ function generateMenu(categories, menuOpen) {
     navList.appendChild(li);
   });
 }
-
-async function main() {
-  hideContent();
-  const config = await loadConfig();
-  var menuItems = config.categories.length;
-  var menuOpen = [true].concat(new Array(menuItems - 1).fill(false));
-  generateMenu(config.categories, menuOpen);
-  preloadFirstImage(config);
-  /*   var menuItems = document.querySelectorAll(".menu-item");
-  var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false)); */
-  addHoverListeners(menuOpen);
-
-  setTimeout(() => {
-    displayContent();
-  }, 1500);
-}
-main();
 
 // TODO: outsource hideContent code
 function displayContent() {

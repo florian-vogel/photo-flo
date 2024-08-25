@@ -69,4 +69,24 @@
       </div>
     </div>
   </div>
+  <script>
+    function checkCSSLoaded() {
+      const styleSheets = Array.from(document.styleSheets);
+      const allLoaded = styleSheets.every((sheet) => !sheet.disabled);
+
+      if (allLoaded) {
+        //document.getElementById("loaded-message").style.display = "block";
+        console.log("loaded");
+      } else {
+        console.log("not loaded");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", checkCSSLoaded);
+
+    // Listen for the load event on each stylesheet
+    document.querySelectorAll('link[rel="stylesheet"]').forEach((link) => {
+      link.addEventListener("load", checkCSSLoaded);
+    });
+  </script>
 </body>

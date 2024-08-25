@@ -20,7 +20,7 @@ body {
   font-size: 10px !important;
   padding-top: 12vh;
   padding-bottom: 12vh;
-  opacity: 0;
+  //opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
 
@@ -53,10 +53,12 @@ h3 {
 }
 
 #content {
+  height: 76vh;
   .nav-menu {
     padding-right: 2vh;
     padding-left: 2vh;
     flex: 1;
+    height: 76vh;
   }
 
   .description {
