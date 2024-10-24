@@ -60,6 +60,7 @@ ul.nav-list {
         //transition: opacity 0.5s ease-in-out;
         //transition: color, opacity 0.5s ease-in-out;
         cursor: default;
+        white-space: nowrap;
 
         &.clickable {
             cursor: pointer;
