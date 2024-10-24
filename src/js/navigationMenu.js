@@ -57,6 +57,7 @@ function generateMenu(categories, menuOpen) {
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         a.classList.add("active");
+        a.href="javascript:void(0);";
         menuOpen[index] = true;
         /*         var menuOpen = [true].concat(
           new Array(menuItems.length - 1).fill(false)
@@ -82,6 +83,7 @@ function generateMenu(categories, menuOpen) {
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         subA.classList.add("active");
+        subA.href="javascript:void(0);";
         // TODO: collapse all other submenues
         /*         var menuOpen = [true].concat(
           new Array(menuItems.length - 1).fill(false)
