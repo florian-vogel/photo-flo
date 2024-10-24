@@ -1,8 +1,8 @@
 function checkWidth() {
   const currentPath = window.location.pathname;
-  if (window.innerWidth < 1100 || isMobileOrTablet()) {
-    if (!currentPath.includes("mobile.html")) {
-      window.location.href = "mobile.html";
+  if (window.innerWidth >= 1100 && !isMobileOrTablet()) {
+    if (currentPath.includes("mobile.html")) {
+      window.location.href = "./";
     }
   }
 }

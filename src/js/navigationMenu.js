@@ -15,7 +15,7 @@ main();
 
 async function loadConfig() {
   try {
-    const response = await fetch("./../siteConfig.json");
+    const response = await fetch("./siteConfig.json");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
