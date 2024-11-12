@@ -6,6 +6,8 @@
 }
 
 #imageDescription {
+    white-space: nowrap;
+    text-align: left;
     align-self: flex-start;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
@@ -20,18 +22,21 @@
 #buttonRight {
     /*     position: absolute; */
     width: 50%;
-    height: 104%;
+    height: calc(100% + 22px);
     background-color: rgba(0, 0, 0, 0);
     border: none;
     color: #939393;
     display: flex;
     transition: color 0.5s ease-in-out;
-    font-size: 12px !important;
+    font-size: 14px !important;
     cursor: pointer;
-    margin-top: 18px;
 
     &:hover {
         color: black;
+    }
+
+    &::before {
+        color: #939393;
     }
 }
 
@@ -55,4 +60,5 @@
     top: 0;
     display: flex;
     flex-direction: row;
+    height: 76vh;
 }

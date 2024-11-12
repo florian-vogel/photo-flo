@@ -1,6 +1,21 @@
+async function main() {
+  hideContent();
+  const config = await loadConfig();
+  var menuItems = config.categories.length;
+  var menuOpen = [true].concat(new Array(menuItems - 1).fill(false));
+  generateMenu(config.categories, menuOpen);
+  preloadFirstImage(config);
+  addHoverListeners(menuOpen);
+
+  setTimeout(() => {
+    displayContent();
+  }, 1000);
+}
+main();
+
 async function loadConfig() {
   try {
-    const response = await fetch("./../siteConfig.json");
+    const response = await fetch("./siteConfig.json");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -42,6 +57,7 @@ function generateMenu(categories, menuOpen) {
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         a.classList.add("active");
+        a.href="javascript:void(0);";
         menuOpen[index] = true;
         /*         var menuOpen = [true].concat(
           new Array(menuItems.length - 1).fill(false)
@@ -67,6 +83,7 @@ function generateMenu(categories, menuOpen) {
         const allMenuItems = navList.querySelectorAll(".active");
         allMenuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         subA.classList.add("active");
+        subA.href="javascript:void(0);";
         // TODO: collapse all other submenues
         /*         var menuOpen = [true].concat(
           new Array(menuItems.length - 1).fill(false)
@@ -84,23 +101,6 @@ function generateMenu(categories, menuOpen) {
     navList.appendChild(li);
   });
 }
-
-async function main() {
-  hideContent();
-  const config = await loadConfig();
-  var menuItems = config.categories.length;
-  var menuOpen = [true].concat(new Array(menuItems - 1).fill(false));
-  generateMenu(config.categories, menuOpen);
-  preloadFirstImage(config);
-  /*   var menuItems = document.querySelectorAll(".menu-item");
-  var menuOpen = [true].concat(new Array(menuItems.length - 1).fill(false)); */
-  addHoverListeners(menuOpen);
-
-  setTimeout(() => {
-    displayContent();
-  }, 1500);
-}
-main();
 
 // TODO: outsource hideContent code
 function displayContent() {

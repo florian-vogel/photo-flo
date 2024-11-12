@@ -6,12 +6,12 @@
       "name": "liva voigt",
       "images": [
         {
-          "description": "bsp bild horizontal",
-          "url": "./assets/exhibitions/blendung/IMG_4697.jpg"
+          "description": "bsp bild\nhorizontal",
+          "url": "./src/assets/exhibitions/blendung/IMG_4697.jpg"
         },
         {
           "description": "blendung exhib",
-          "url": "./assets/photo/barcelona/bspbildhorizontal.jpg"
+          "url": "./src/assets/photo/barcelona/bspbildhorizontal.jpg"
         }
       ],
       "subcategories": [],
@@ -27,15 +27,15 @@
             "images": [
               {
                 "description": "bsp bild vertical",
-                "url": "./assets/photo/barcelona/bsp2bildervertikal.png"
+                "url": "./src/assets/photo/barcelona/bsp2bildervertikal.png"
               },
               {
                 "description": "bsp bild horizontal",
-                "url": "./assets/photo/barcelona/bspbildhorizontal.jpg"
+                "url": "./src/assets/photo/barcelona/bspbildhorizontal.jpg"
               },
               {
                 "description": "bsp bild vertikal",
-                "url": "./assets/photo/barcelona/bspbildvertikal.jpg"
+                "url": "./src/assets/photo/barcelona/bspbildvertikal.jpg"
               }
             ]
           }
@@ -47,7 +47,7 @@
             "images": [
               {
                 "description": "zookies first imgage",
-                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+                "url": "./src/assets/photo/zookies/DSCF9865-3.jpg"
               }
             ]
           }
@@ -59,7 +59,7 @@
             "images": [
               {
                 "description": "zookies first imgage",
-                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+                "url": "./src/assets/photo/zookies/DSCF9865-3.jpg"
               }
             ]
           }
@@ -71,7 +71,7 @@
             "images": [
               {
                 "description": "zookies first imgage",
-                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+                "url": "./src/assets/photo/zookies/DSCF9865-3.jpg"
               }
             ]
           }
@@ -83,7 +83,7 @@
             "images": [
               {
                 "description": "zookies first imgage",
-                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+                "url": "./src/assets/photo/zookies/DSCF9865-3.jpg"
               }
             ]
           }
@@ -95,7 +95,7 @@
             "images": [
               {
                 "description": "zookies first imgage",
-                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+                "url": "./src/assets/photo/zookies/DSCF9865-3.jpg"
               }
             ]
           }
@@ -107,7 +107,7 @@
             "images": [
               {
                 "description": "zookies first imgage",
-                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+                "url": "./src/assets/photo/zookies/DSCF9865-3.jpg"
               }
             ]
           }
@@ -124,7 +124,7 @@
             "images": [
               {
                 "description": "zookies first imgage",
-                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+                "url": "./src/assets/photo/zookies/DSCF9865-3.jpg"
               }
             ]
           }
@@ -141,7 +141,7 @@
             "images": [
               {
                 "description": "zookies first imgage",
-                "url": "./assets/photo/zookies/DSCF9865-3.jpg"
+                "url": "./src/assets/photo/zookies/DSCF9865-3.jpg"
               }
             ]
           }

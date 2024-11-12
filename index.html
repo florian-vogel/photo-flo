@@ -1,1 +1,92 @@
-<meta http-equiv="refresh" content="0; url=./src/index.html">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-config="pageTitle">Liva Vogt</title>
+  <link rel="stylesheet" href="./src/styling/main.scss" />
+  <link rel="stylesheet" href="./src/styling/navbar.scss" />
+  <link rel="stylesheet" href="./src/styling/photosContainer.scss" />
+  <link rel="stylesheet" href="./src/styling/carousel.scss" />
+  <script src="./src/js/loadMobileVersion.js" defer></script>
+  <script src="./src/js/loadConfig.js" defer></script>
+  <script src="./src/js/carousel.js" defer></script>
+  <script src="./src/js/navigationMenu.js" defer></script>
+</head>
+
+<body>
+  <div id="content">
+    <div class="flex-container">
+      <nav class="nav-menu">
+        <ul class="nav-list flex-container"></ul>
+      </nav>
+      <div class="photos-container flex-container">
+        <div class="image-container">
+          <img id="carouselImage" src="" alt="" />
+        </div>
+        <div class="carousel-buttons-container">
+          <button id="buttonLeft">
+            <svg
+              class="svg-icon"
+              style="
+                width: 1em;
+                height: 1em;
+                vertical-align: middle;
+                fill: currentColor;
+                overflow: hidden;
+              "
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M608.384 823.552l-243.242667-283.776a42.666667 42.666667 0 0 1 0-55.552l243.242667-283.776a36.266667 36.266667 0 0 1 57.770667 43.733333l-162.773334 244.138667a42.666667 42.666667 0 0 0 0 47.36l162.773334 244.138667a36.266667 36.266667 0 0 1-57.770667 43.733333z"
+              />
+            </svg>
+          </button>
+          <button id="buttonRight">
+            <svg
+              class="svg-icon"
+              style="
+                width: 1em;
+                height: 1em;
+                vertical-align: middle;
+                fill: currentColor;
+                overflow: hidden;
+              "
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M415.616 823.552l243.242667-283.776a42.666667 42.666667 0 0 0 0-55.552L415.616 200.448a36.266667 36.266667 0 0 0-57.770667 43.733333l162.773334 244.138667a42.666667 42.666667 0 0 1 0 47.36l-162.773334 244.138667a36.266667 36.266667 0 0 0 57.770667 43.733333z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="description">
+        <div id="imageDescription"></div>
+        <div id="categoryDescription" class="information-text"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function checkCSSLoaded() {
+      const styleSheets = Array.from(document.styleSheets);
+      const allLoaded = styleSheets.every((sheet) => !sheet.disabled);
+
+      if (allLoaded) {
+        //document.getElementById("loaded-message").style.display = "block";
+        console.log("loaded");
+      } else {
+        console.log("not loaded");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", checkCSSLoaded);
+
+    // Listen for the load event on each stylesheet
+    document.querySelectorAll('link[rel="stylesheet"]').forEach((link) => {
+      link.addEventListener("load", checkCSSLoaded);
+    });
+  </script>
+</body>
