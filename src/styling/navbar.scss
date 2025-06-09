@@ -15,18 +15,9 @@ ul.nav-list {
         a:visited {
             color: black;
 
-            //color: #939393;
             text-decoration: none;
-            //opacity: 0;
         }
     }
-
-    /*   & > li:not(.active) {
-    a {
-      color: black;
-      opacity: 0;
-    }
-  } */
 
     .active {
         a {
@@ -51,15 +42,12 @@ ul.nav-list {
 
     &:hover {
         a {
-            //color: black !important;
             color: #939393 !important;
             opacity: 1 !important;
         }
     }
 
     a {
-        //transition: opacity 0.5s ease-in-out;
-        //transition: color, opacity 0.5s ease-in-out;
         cursor: default;
         white-space: nowrap;
 
@@ -75,10 +63,6 @@ ul.nav-list {
     & > li {
         margin-bottom: 0;
         height: 100%;
-
-        /*     .toggle-submenu:hover {
-      text-decoration: underline;
-    } */
     }
 
     .toggle-submenu {
@@ -88,10 +72,6 @@ ul.nav-list {
     .active {
         text-decoration: underline !important;
         opacity: 1 !important;
-
-        /*       a {
-        color: black;
-      } */
     }
 
     .submenu {
@@ -102,7 +82,6 @@ ul.nav-list {
         max-height: 0;
         overflow: visible;
         transition: max-height 1s ease-in-out;
-        // color: #939393;
 
         li {
             margin-bottom: 4px !important;
@@ -116,7 +95,7 @@ ul.nav-list {
     }
 
     .submenu li {
-        opacity: 0; /* Start with hidden submenu items */
+        opacity: 0;
     }
 
     .active-submenu,
@@ -143,7 +122,7 @@ ul.nav-list {
 
     ul.nav-list .submenu li {
         opacity: 0;
-        transition: opacity 1s ease-in-out; /* Transition for opacity */
+        transition: opacity 1s ease-in-out;
         margin-bottom: 10px !important;
     }
 }

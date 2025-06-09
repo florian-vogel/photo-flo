@@ -1,7 +1,5 @@
 .photos-container {
-  //width: 100%;
   height: 100%;
-  //padding-top: 5rem;
 
   &.flex-container {
     flex-direction: row;
@@ -17,9 +15,6 @@
 
   h3 {
     margin-bottom: 70px;
-    //text-decoration: underline;
-    //font-weight: bolder;
-    //font-style: italic;
   }
 
   .photo-container {
@@ -30,37 +25,24 @@
       flex-direction: row;
       align-items: end;
       justify-content: center;
-      //align-items: center;
       padding: 0;
-      //padding-bottom: 3rem;
       margin: auto;
     }
   }
 
   img {
-    //width: 100%;
     display: block;
-    opacity: 0; /* Start with the image fully transparent */
-    transition: opacity 0.8s ease-in-out; /* Transition effect duration and style */
+    opacity: 0; 
+    transition: opacity 0.8s ease-in-out; 
   }
 }
 
 .fade-in {
-  opacity: 1 !important; /* Fully visible when the 'fade-in' class is added */
+  opacity: 1 !important; 
 }
 
 .description {
-  /*       position: absolute;
-      right: 0;
-      bottom: 0; */
-  //padding-right: 2vh;
-  //margin-bottom: 12vh;
-  //padding-left: 2vh;
-  //font-size: 0.85rem;
   text-align: right;
-  //color: #939393;
-  //font-size: 9px;
-  //width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
