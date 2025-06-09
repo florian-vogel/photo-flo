@@ -13,7 +13,7 @@ ul.nav-list {
     li {
         a:link,
         a:visited {
-            color: #939393;
+            color: black;
 
             //color: #939393;
             text-decoration: none;
@@ -51,7 +51,8 @@ ul.nav-list {
 
     &:hover {
         a {
-            color: black !important;
+            //color: black !important;
+            color: #939393 !important;
             opacity: 1 !important;
         }
     }

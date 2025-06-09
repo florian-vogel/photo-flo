@@ -25,18 +25,18 @@
     height: calc(100% + 22px);
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    color: #939393;
+    color: black;
     display: flex;
     transition: color 0.5s ease-in-out;
     font-size: 14px !important;
     cursor: pointer;
 
     &:hover {
-        color: black;
+        color: #939393;
     }
 
     &::before {
-        color: #939393;
+        color: black;
     }
 }
 

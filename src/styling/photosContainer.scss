@@ -58,7 +58,7 @@
   //padding-left: 2vh;
   //font-size: 0.85rem;
   text-align: right;
-  color: #939393;
+  //color: #939393;
   //font-size: 9px;
   //width: 250px;
   display: flex;
@@ -67,6 +67,6 @@
   transition: color 0.5s ease-in-out;
 
   &:hover {
-    color: black !important;
+    color: #939393 !important;
   }
 }
