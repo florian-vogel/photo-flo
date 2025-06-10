@@ -3,7 +3,7 @@
   "deviceTooSmallText": "Please view this page on a larger screen.",
   "categories": [
     {
-      "name": "liva voigt",
+      "name": "florian vogel",
       "images": [
         {
           "description": "bsp bild\nhorizontal",
@@ -115,16 +115,44 @@
       ]
     },
     {
-      "name": "exhibitions",
+      "name": "weit weg",
       "subcategories": [
         {
-          "name": "blendung",
+          "name": "hetz mich nicht",
           "content": {
             "text": null,
             "images": [
               {
-                "description": "zookies first imgage",
-                "url": "./src/assets/photo/zookies/DSCF9865-3.jpg"
+                "description": "",
+                "url": "./src/assets/weit_weg/hetz_mich_nicht/DSCN1276.jpg"
+              },
+              {
+                "description": "",
+                "url": "./src/assets/weit_weg/hetz_mich_nicht/DSCN1290.jpg"
+              },
+              {
+                "description": "",
+                "url": "./src/assets/weit_weg/hetz_mich_nicht/DSCN1485.jpg"
+              },
+              {
+                "description": "",
+                "url": "./src/assets/weit_weg/hetz_mich_nicht/DSCN1585.jpg"
+              },
+              {
+                "description": "",
+                "url": "./src/assets/weit_weg/hetz_mich_nicht/DSCN1620.jpg"
+              },
+              {
+                "description": "",
+                "url": "./src/assets/weit_weg/hetz_mich_nicht/DSCN1643.jpg"
+              },
+              {
+                "description": "",
+                "url": "./src/assets/weit_weg/hetz_mich_nicht/DSCN1725.jpg"
+              },
+              {
+                "description": "",
+                "url": "./src/assets/weit_weg/hetz_mich_nicht/RSCN1007.jpg"
               }
             ]
           }
