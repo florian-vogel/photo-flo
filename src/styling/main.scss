@@ -56,10 +56,13 @@ h3 {
   height: 76vh;
 
   .nav-menu {
-    padding-right: 2vh;
-    padding-left: 2vh;
     flex: 1;
     height: 76vh;
+
+    ul.nav-list {
+      padding-right: 2vh;
+      padding-left: 2vh;
+    }
   }
 
   .description {
